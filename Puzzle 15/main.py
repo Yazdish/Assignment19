@@ -1,7 +1,6 @@
-import random
 import sys
 from functools import partial
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_mainwindow import Ui_MainWindow
 from function import non_repeating_random_2D_array
 
@@ -10,7 +9,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
         self.buttons = [[self.ui.btn_1 , self.ui.btn_2 , self.ui.btn_3 , self.ui.btn_4],
                         [self.ui.btn_5 , self.ui.btn_6 , self.ui.btn_7 , self.ui.btn_8],
                         [self.ui.btn_9 , self.ui.btn_10 , self.ui.btn_11 , self.ui.btn_12],
@@ -37,8 +35,19 @@ class MainWindow(QMainWindow):
             self.empty_i = i
             self.empty_j = j
 
-        else:
-            pass
+        if self.check_win() == True:
+            msg_box = QMessageBox()
+            msg_box.setText("YOU WIN!")
+            msg_box.exec_()
+
+    def check_win(self):
+        index = 1
+        for i in range(4):
+            for j in range(4):
+                if int(self.buttons[i][j].text()) != index:
+                    return False
+                index +=1
+        return True
 
 app = QApplication(sys.argv)
 
