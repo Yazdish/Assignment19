@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         self.ui.strong.clicked.connect (partial (self.statement , "strong"))
         self.ui.extra.clicked.connect (partial (self.statement , "extra"))
         self.ui.superstrong.clicked.connect (partial (self.statement , "superstrong"))
+        self.ui.about.clicked.connect (self.about)
         self.ui.generate.clicked.connect (self.generate)
         self.charecters = [ "!" , "@" , "#" , "$" , "%" , "^" , "&" , "*" , "?" ]
         self.lower_letters = [ "a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z" ]
@@ -105,6 +106,13 @@ class MainWindow(QMainWindow):
 
     def statement ( self , mode) :
         self.state = mode
+
+    def about (self):
+        text = f"Strong Password :\n 8 characters long including numbers, special characters and uppercase letters\
+\nExtra Strong Password :\n 12 characters long with multiple numbers, special characters and uppercase letters\nSuper Strong Password:\
+\n 20 characters long with multiple numbers, special characters and uppercase letters"
+        message = QMessageBox (WindowTitle = "about" , text = text)
+        message.exec_ ()
 
 app = QApplication ( sys.argv )
 window = MainWindow ()

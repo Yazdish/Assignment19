@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(384, 178)
+        MainWindow.resize(384, 210)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -53,6 +53,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.superstrong, 1, 0, 1, 1)
 
+        self.about = QPushButton(self.centralwidget)
+        self.about.setObjectName(u"about")
+
+        self.gridLayout.addWidget(self.about, 1, 3, 1, 1)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -73,5 +78,6 @@ class Ui_MainWindow(object):
         self.generate.setText(QCoreApplication.translate("MainWindow", u"Generate", None))
         self.strong.setText(QCoreApplication.translate("MainWindow", u"Strong", None))
         self.superstrong.setText(QCoreApplication.translate("MainWindow", u"Super Strong", None))
+        self.about.setText(QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
 
