@@ -4,19 +4,19 @@
 
 ### Strong password is a 8 digit text including numbers, special characters and uppercase letters.
 
-![image](pic\strong.png)
+![image](pic/strong.png)
 
 ---
 
 ### Extra Strong password is a 12 digit text including numbers, special characters and uppercase letters.
 
-![image](pic\extra.png)
+![image](pic/extra.png)
 
 ---
 
 ### Super Strong password is a 20 digit text including numbers, special characters and uppercase letters.
 
-![image](pic\superstrong.png)
+![image](pic/superstrong.png)
 
 ---
 
